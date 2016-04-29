@@ -43,6 +43,12 @@ gem 'aws-sdk', '~> 2.3'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'mysql2', '>= 0.3.13', '< 0.5'
+end
+
+group :production do
+  gem 'pg', '~> 0.18.4'
+  gem 'rails_12factor', '~> 0.0.3'
 end
 
 group :development do
@@ -51,14 +57,5 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-
-  group :development, :test do
-    gem 'mysql2', '>= 0.3.13', '< 0.5'
-  end
-
-  group :production do
-    gem 'pg', '~> 0.18.4'
-    gem 'rails_12factor', '~> 0.0.3'
-  end
 
 end
